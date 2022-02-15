@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: gateway-service
+    #configuración del config-server
+  cloud:
+    config:
+      uri: http://localhost:8090
+      username: nttdata
+      password: nttd4t4
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: credit_card-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/consume-credit/**
+        - id: credit_card-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/credit_card/**
