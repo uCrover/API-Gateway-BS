@@ -12,6 +12,7 @@ spring:
         locator:
           enabled: true
       routes:
+        #CreditCard-Service
         - id: credit_card-service
           uri: http://localhost:8082
           predicates:
@@ -20,3 +21,32 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/credit_card/**
+        #BankAccount-Service
+        - id: bank_account-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/bank_account/**
+        #Customer-Service
+        - id: customer-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/customer/**
+        #Deposit-Service
+        - id: deposit-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/deposit/**
+        #Retirement-Service
+        - id: retirement-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/retirement/**
+        #Credit-Service
+        - id: credit_card-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/credit/**
+        - id: credit_card-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/paymentCredit/**
