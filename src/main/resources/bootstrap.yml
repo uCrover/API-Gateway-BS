@@ -5,8 +5,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8090
-      username: nttdata
-      password: nttd4t4
+      username: pr0j3ct
+      password: pr0j3ct
     gateway:
       discovery:
         locator:
